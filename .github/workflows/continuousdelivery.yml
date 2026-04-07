@@ -1,20 +1,20 @@
 name: Continuous Delivery Wokflows
 on:
-  push:
+  pull_request:
     branches:
       - main
 jobs:
   delivery:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Simulando Continuous Delivery
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
-          name: projeitozipado.zip
-          path:
-            '**.py'
+          name: projetozipado
+          path: |
+            *.py
             README.md
-
