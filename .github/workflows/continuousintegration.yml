@@ -1,5 +1,4 @@
 name: Continuous Integration
-
 on:
   pull_request:
     branches:
@@ -8,11 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
+      - name: Check out repository code
         uses: actions/checkout@v4
 
+<<<<<<< Updated upstream
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -23,3 +22,9 @@ jobs:
 
       - name: Rodar pylint
         run: pylint *.py || true
+=======
+      - name: Python Lint Code Scanning Action
+        uses: advanced-security/python-lint-code-scanning-action@v1.1.1
+        with:
+          linter: pylint
+>>>>>>> Stashed changes
